@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container">
+    <h1>Article Uploaded Successfully</h1>
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+    <img src="{{ article.image.url }}" alt="Article Image">
+  </div>
+{% endblock %}

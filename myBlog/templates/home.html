@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>    
+
+<style>
+    /* Maximize the container with the window */
+    .container {
+        max-width: 100%;
+    }
+    
+    /* Set the jumbotron to full width */
+    .jumbotron {
+        width: 100%;
+    }
+    
+    /* Set the row to display in a single line */
+    .row {
+        display: flex;
+    }
+    
+    /* Adjust the column width to fit the available space */
+    .col {
+        flex: 1;
+    }
+    
+    /* Add custom styling for the images */
+    .img-thumbnail {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+    
+    /* Add styling for the blockquote */
+    .blockquote {
+        margin: 20px 0;
+        padding: 20px;
+        border-left: 5px solid #ccc;
+        background-color: #f9f9f9;
+    }
+    
+    /* Add styling for the media section */
+    .media {
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+    
+    /* Adjust the image size in the media section */
+    .rounded-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Add custom styling for the comment section */
+    .content-section {
+        margin-top: 30px;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+    
+    img {
+        width: 50%;
+        height: 50%;
+        margin-right: 10px;
+    }
+    
+    .article-metadata {
+        margin-bottom: 10px;
+    }
+    
+    .article-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .article-content {
+        margin-top: 10px;
+        color: #555;
+    }
+    .article-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+      }
+      
+      .article {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+      }
+</style>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>    
+    
+    
+        <h1 style="text-align:center">Sipho's Blog</h1>
+        <p style="text-align:center">All you need to know about CSE</p>    
+    
+    <div class="row">
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page1' %}'" src="{% static './images/css.jpg' %}" class="img-thumbnail" alt="Alternative text">
+        </div>
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page2' %}'" src="{% static './images/js.jpg' %}" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page3' %}'" src="{% static './images/bootstrap.jpg' %}" class="img-thumbnail">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page2' %}'" src="{% static './images/js.jpg' %}" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page1' %}'" src="{% static './images/css.jpg' %}" class="img-thumbnail" alt="Alternative text">
+        </div>
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page3' %}'" src="{% static './images/bootstrap.jpg' %}" class="img-thumbnail">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page3' %}'" src="{% static './images/bootstrap.jpg' %}" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page2' %}'" src="{% static './images/js.jpg' %}" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <img onclick="location.href='{% url 'blog-page1' %}'" src="{% static './images/css.jpg' %}" class="img-thumbnail" alt="Alternative text">
+        </div>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div class="container">
+        <h1>Blockquotes</h1>
+        <p>The blockquote element is used to present content from another source:</p>
+        <blockquote class="blockquote">
+            <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+            <footer class="blockquote-footer">From WWF's website</footer>
+        </blockquote>
+    </div>
+    <div class="media border p-3">
+        <img src="{% static './images/bb.jpg' %}" alt="Best Blog" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+            <h4>Best Blog <small><i>Posted on March 29, 2023</i></small></h4>
+            <p>The blog that is one of the best in computer systems engineering created by SA Mahlangu</p>
+        </div>
+    </div>
+    <br><br>
+
+    
+    <div class="article-grid">
+        {% for article in articles %}
+        <div class="article">
+          <h2>{{ article.title }}</h2>          
+          <p>{{ article.content }}</p>
+          <img src="{{ article.image.url }}" alt="{{ article.title }}" onclick="handleImageClick(event)">
+        </div>
+        {% endfor %}
+      </div>
+      <script>
+        function handleImageClick(event) {
+          // Access the clicked image element
+          var clickedImage = event.target;
+          
+          // Perform desired actions
+          // Example: Display a message with the alt attribute value
+          alert("Clicked on image: " + clickedImage.alt);
+        }
+        </script>
+    <h1>COMMENT SECTION</h1>
+    {% for post in posts %}
+        <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ post.author }}</a>
+                    <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
+    
+   
+{% endblock %}
+</body>
+</html>

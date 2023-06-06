@@ -1,0 +1,57 @@
+/*the front page images*/
+<div class="jumbotron">
+    <h1 style="text-align:center">Sipho's Blog</h1>
+    <p style="text-align:center">All you need to know about CSE</p>    
+</div>
+<div class="row">
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page1' %}'" src="{% static './images/css.jpg' %}" class="img-thumbnail" alt="Alternative text">
+    </div>
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page2' %}'" src="{% static './images/js.jpg' %}" class="img-thumbnail">
+    </div>
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page3' %}'" src="{% static './images/bootstrap.jpg' %}" class="img-thumbnail">
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page2' %}'" src="{% static './images/js.jpg' %}" class="img-thumbnail">
+    </div>
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page1' %}'" src="{% static './images/css.jpg' %}" class="img-thumbnail" alt="Alternative text">
+    </div>
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page3' %}'" src="{% static './images/bootstrap.jpg' %}" class="img-thumbnail">
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page3' %}'" src="{% static './images/bootstrap.jpg' %}" class="img-thumbnail">
+    </div>
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page2' %}'" src="{% static './images/js.jpg' %}" class="img-thumbnail">
+    </div>
+    <div class="col">
+        <img onclick="location.href='{% url 'blog-page1' %}'" src="{% static './images/css.jpg' %}" class="img-thumbnail" alt="Alternative text">
+    </div>
+</div>
+<div>
+    <br>
+</div>
+<div class="container">
+    <h1>Blockquotes</h1>
+    <p>The blockquote element is used to present content from another source:</p>
+    <blockquote class="blockquote">
+        <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+        <footer class="blockquote-footer">From WWF's website</footer>
+    </blockquote>
+</div>
+<div class="media border p-3">
+    <img src="{% static './images/bb.jpg' %}" alt="Best Blog" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+    <div class="media-body">
+        <h4>Best Blog <small><i>Posted on March 29, 2023</i></small></h4>
+        <p>The blog that is one of the best in computer systems engineering created by SA Mahlangu</p>
+    </div>
+</div>
+<br><br>
